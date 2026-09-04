@@ -1,0 +1,17 @@
+[project]
+name = "sys_check"
+version = "3.2.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Trevonn", email = "Trevonn@users.noreply.github.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+sys_check = "sys_check:main"
+
+[build-system]
+requires = ["uv_build>=0.12.7,<0.13.0"]
+build-backend = "uv_build"
