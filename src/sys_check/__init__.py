@@ -1,3 +1,4 @@
+import platform
 import sys
 
 from sys_check.cpu import cpu_info
@@ -5,6 +6,11 @@ from sys_check.gpu import gpu_info
 from sys_check.help import help_info
 from sys_check.misc import misc_info
 from sys_check.system import system_info
+
+if platform.system() != "Linux":
+    print("This program only runs on Linux systems. Exiting")
+    sys.exit()
+
 
 VERSION = "3.2.1"
 ARG_LIST = ("-h", "--help", "--print")
