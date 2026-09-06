@@ -1,2 +1,9 @@
+ARG_LIST = ("--help", "--print", "--headless")
+
+
 def help_info():
-    print("This is the help section")
+    print("System Check Help")
+    print("Arguments:")
+    print()
+    for arg in ARG_LIST:
+        print(arg)

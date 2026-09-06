@@ -58,10 +58,10 @@ def gpu_info() -> None:
         print(f"Vendor               : {gpu_vendor}")
         print(f"Name                 : {gpu_name}")
         print(f"Type                 : {gpu_type}")
-        print(f"VRAM                 : {gpu_vram}")
         print(f"Driver               : {gpu_driver}")
-        print(f"OpenGL               : {opengl_version}")
         print(f"Vulkan               : {vulkan_version}")
+        print(f"OpenGL               : {opengl_version}")
+        print(f"VRAM                 : {gpu_vram}")
         if gpu_vendor == "AMD":
             print(f"AMDGPU Power State   : {gpu_level}")
     except NameError:

@@ -12,8 +12,7 @@ if platform.system() != "Linux":
     sys.exit()
 
 
-VERSION = "3.2.1"
-ARG_LIST = ("-h", "--help", "--print")
+VERSION = "3.3.1"
 
 try:
     argument = sys.argv[1]
@@ -22,18 +21,22 @@ except IndexError:
 
 
 def main() -> None:
-    if argument in ("--help", "-h"):
+    if argument == "--help":
         help_info()
-    elif argument not in ARG_LIST:
-        print(f"{argument} in not a valid argument")
-
-    if argument == "--print":
+    elif argument == "--print":
         print(f"System Check {VERSION}")
         print()
         system_info()
         cpu_info()
         gpu_info()
         misc_info()
+    elif argument == "--headless":
+        print(f"System Check {VERSION}")
+        print()
+        system_info()
+        cpu_info()
+    else:
+        print(f"{argument} in not a valid argument")
 
 
 if __name__ == "__main__":
