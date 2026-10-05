@@ -5,8 +5,8 @@ from subprocess import run
 hostname = gethostname()
 ip_addr = gethostbyname(hostname)
 kernel = uname().release
-glibc = run(["ldd", "--version"], check=False, capture_output=True)
-glibc = str(glibc.stdout).split()[3].removesuffix("\\nCopyright")
+glibc_cmd = run(["ldd", "--version"], check=False, capture_output=True)
+glibc = str(glibc_cmd.stdout).split()[3].removesuffix("\\nCopyright")
 
 with open("/proc/sys/vm/max_map_count") as file:
     max_map_count = file.read().strip()
